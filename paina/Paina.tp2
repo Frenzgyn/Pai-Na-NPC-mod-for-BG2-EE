@@ -292,7 +292,7 @@ COPY_EXISTING ~spidfgsu.cre~ ~override/spidfgsu.cre~
   
 // UB compatibility
 
-ACTION_IF FILE_EXISTS_IN_GAME ~u!spbane.itm~ AND FILE_EXISTS_IN_GAME ~bc0paina.dlg~
+ACTION_IF FILE_EXISTS_IN_GAME ~ubspbane.itm~ AND FILE_EXISTS_IN_GAME ~bc0paina.dlg~
 THEN BEGIN
   PRINT ~Adding compatibility for Unfinished Business~
 COMPILE ~%MOD_FOLDER%/dialogue/crossmod/ub.d~
