@@ -1,6 +1,6 @@
 INTERJECT SPPAIN 20 C0UBPAINA1
 == SPPAIN IF ~Global("C0UBPainaQuest","GLOBAL",0)~ THEN ~I suppose you city-dwellers will no doubt want a reward for your service. I have little to give, but you may find this useful. Take it and go.~
-DO ~TakePartyItem("U!SPBANE")
+DO ~TakePartyItem("UBSPBANE")
 SetGlobal("ReturnedSpiderBane","GLOBAL",1)
 EraseJournalEntry(190454)
 EraseJournalEntry(190456)
@@ -13,7 +13,7 @@ GiveItemCreate("wand14",LastTalkedToBy,10,0,0)~ EXIT
 // Cromwell
 
 EXTEND_BOTTOM WSMITH01 13
-  IF ~PartyHasItem("u!spbane")~ THEN GOTO CROMWELL1
+  IF ~PartyHasItem("ubspbane")~ THEN GOTO CROMWELL1
 END
   
 CHAIN WSMITH01 CROMWELL1
@@ -25,8 +25,8 @@ CHAIN WSMITH01 CROMWELL1
 	+ ~PartyGoldGT(1999) !InParty("C0Paina")~ + ~That sounds good. Do it.~ DO ~SetGlobal("C0PainaSpiderBaneReforge","ar0334",1)
                                                  SetGlobal("ForgeStuff","GLOBAL",1)
                                                  TakePartyGold(2000)
-                                                 TakePartyItemNum("u!spbane",1)
-                                                 DestroyItem("u!spbane")
+                                                 TakePartyItemNum("ubspbane",1)
+                                                 DestroyItem("ubspbane")
                                                  DestroyGold(2000)~ EXTERN WSMITH01 56
 	+ ~PartyGoldGT(1999)~ + ~Not at this time. What else?~ EXTERN WSMITH01 CROMWELLNO
 
@@ -56,8 +56,8 @@ CHAIN C0PAINAJ SPBANE2
 DO ~SetGlobal("C0PainaSpiderBaneReforge","ar0334",1)
                                                  SetGlobal("ForgeStuff","GLOBAL",1)
                                                  TakePartyGold(2000)
-                                                 TakePartyItemNum("u!spbane",1)
-                                                 DestroyItem("u!spbane")
+                                                 TakePartyItemNum("ubspbane",1)
+                                                 DestroyItem("ubspbane")
                                                  DestroyGold(2000)~ EXTERN WSMITH01 56
 												 
 CHAIN C0PAINAJ SPBANE3
