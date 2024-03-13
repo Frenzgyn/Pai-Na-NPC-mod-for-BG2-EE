@@ -292,13 +292,18 @@ COPY_EXISTING ~rumar01.cre~ ~override/c0pwitch.cre~
 COPY_EXISTING ~spidfgsu.cre~ ~override/spidfgsu.cre~
   WRITE_EVALUATED_ASCII DIALOG          ~spidfgsu~ #8 
   
-// UB compatibility
+// UB's Spider's Bane Quest compatibility
 
-ACTION_IF FILE_EXISTS_IN_GAME ~u!spbane.itm~ AND FILE_EXISTS_IN_GAME ~bc0paina.dlg~
+ACTION_IF FILE_EXISTS_IN_GAME ~ubspbane.itm~ AND FILE_EXISTS_IN_GAME ~bc0paina.dlg~
 THEN BEGIN
   PRINT ~Adding compatibility for Unfinished Business~
+COPY_EXISTING ~sppain.cre~ ~override/sppain.cre~
+WRITE_ASCII 0x2cc ~sppain~ #8
 COMPILE ~%MOD_FOLDER%/dialogue/crossmod/ub.d~
+EXTEND_BOTTOM ~AR0334.bcs~ ~%MOD_FOLDER%/dialogue/crossmod/ub.baf~
 END
+
+// Crossmod
 
 ACTION_IF FILE_EXISTS_IN_GAME ~BC0SIRE2.dlg~ AND FILE_EXISTS_IN_GAME ~bc0paina.dlg~
 THEN BEGIN
